@@ -1,1 +1,383 @@
-https://github.com/mahalbrionesmb-byte/frvir.tual/blob/6b844ec6693ccf320b50f1cf4db7bd6a27b03907/package-lock.json
+import React, { useState } from 'react';
+import { ArrowRight, Shield, Target, Users, Zap, Lock, TrendingUp, CheckCircle } from 'lucide-react';
+
+export default function IdeaBridgeLanding() {
+  const [activeTab, setActiveTab] = useState('founders');
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e, type) => {
+    e.preventDefault();
+    // Replace with your actual email service (ConvertKit, Typeform, etc.)
+    console.log(`${type} signup:`, email);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700 z-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-blue-500"></div>
+            <span className="font-bold text-lg">IdeaBridge</span>
+          </div>
+          <div className="hidden md:flex gap-8 text-sm">
+            <a href="#how-it-works" className="hover:text-emerald-400 transition">How It Works</a>
+            <a href="#features" className="hover:text-emerald-400 transition">Features</a>
+            <a href="#faq" className="hover:text-emerald-400 transition">FAQ</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* HERO SECTION */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Gradient orbs background */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Turn Your Ideas Into <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Opportunities</span>
+          </h1>
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl">
+            Connect with serious investors without exposing your secrets. IdeaBridge is the trust-first platform where founders showcase ideas and investors discover innovation.
+          </p>
+
+          {/* Dual CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <button
+              onClick={() => document.getElementById('founder-form').scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/50 transition transform hover:scale-105"
+            >
+              Submit Your Idea
+              <ArrowRight className="inline ml-2 w-5 h-5" />
+            </button>
+            <button
+              onClick={() => document.getElementById('investor-form').scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-slate-700 hover:bg-slate-600 font-semibold rounded-lg transition border border-slate-600"
+            >
+              Join as Investor
+              <ArrowRight className="inline ml-2 w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex flex-col sm:flex-row gap-6 text-sm text-slate-400">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-emerald-400" />
+              <span>Your ideas stay private</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Lock className="w-5 h-5 text-emerald-400" />
+              <span>You control access</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-emerald-400" />
+              <span>Direct connections</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUE PROPOSITION SECTION */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">Why IdeaBridge?</h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* For Founders */}
+            <div className="bg-slate-700/50 border border-slate-600 rounded-xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Zap className="w-8 h-8 text-emerald-400" />
+                <h3 className="text-2xl font-bold">For Founders</h3>
+              </div>
+              <p className="text-slate-300 mb-8">
+                Protect your ideas. Showcase your innovation. Control who sees what.
+              </p>
+              <ul className="space-y-4">
+                {['Showcase without exposing secrets', 'Receive investor interest requests', 'Review investors before sharing', 'Build credibility and visibility'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* For Investors */}
+            <div className="bg-slate-700/50 border border-slate-600 rounded-xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="w-8 h-8 text-blue-400" />
+                <h3 className="text-2xl font-bold">For Investors</h3>
+              </div>
+              <p className="text-slate-300 mb-8">
+                Discover emerging opportunities. Access curated deals. Connect directly.
+              </p>
+              <ul className="space-y-4">
+                {['Discover emerging innovations', 'Access curated opportunities', 'Connect directly with founders', 'Evaluate deals efficiently'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">How It Works</h2>
+
+          {/* Tabs for Founders/Investors */}
+          <div className="flex justify-center gap-4 mb-12">
+            <button
+              onClick={() => setActiveTab('founders')}
+              className={`px-6 py-2 rounded-lg font-semibold transition ${
+                activeTab === 'founders'
+                  ? 'bg-emerald-400 text-slate-900'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              }`}
+            >
+              For Founders
+            </button>
+            <button
+              onClick={() => setActiveTab('investors')}
+              className={`px-6 py-2 rounded-lg font-semibold transition ${
+                activeTab === 'investors'
+                  ? 'bg-blue-400 text-slate-900'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              }`}
+            >
+              For Investors
+            </button>
+          </div>
+
+          {/* Founders Flow */}
+          {activeTab === 'founders' && (
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                { num: '1', title: 'Submit Your Idea', desc: 'Create a profile with public info, keep sensitive details private' },
+                { num: '2', title: 'Get Discovered', desc: 'Investors browse opportunities based on industry and stage' },
+                { num: '3', title: 'Receive Requests', desc: 'Interested investors request access to learn more' },
+                { num: '4', title: 'Build Partnerships', desc: 'Connect and unlock growth opportunities' }
+              ].map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="bg-slate-700/50 border border-slate-600 rounded-xl p-6">
+                    <div className="w-12 h-12 bg-emerald-400 text-slate-900 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                      {step.num}
+                    </div>
+                    <h4 className="font-bold text-lg mb-2">{step.title}</h4>
+                    <p className="text-slate-400 text-sm">{step.desc}</p>
+                  </div>
+                  {i < 3 && <div className="hidden md:block absolute top-16 -right-3 text-slate-500">→</div>}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Investors Flow */}
+          {activeTab === 'investors' && (
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                { num: '1', title: 'Set Your Thesis', desc: 'Define your investment criteria and preferences' },
+                { num: '2', title: 'Browse Opportunities', desc: 'Filter ideas by stage, industry, and investment size' },
+                { num: '3', title: 'Request Access', desc: 'Reach out to founders who match your criteria' },
+                { num: '4', title: 'Connect & Deploy', desc: 'Direct relationships with founders ready to discuss' }
+              ].map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="bg-slate-700/50 border border-slate-600 rounded-xl p-6">
+                    <div className="w-12 h-12 bg-blue-400 text-slate-900 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                      {step.num}
+                    </div>
+                    <h4 className="font-bold text-lg mb-2">{step.title}</h4>
+                    <p className="text-slate-400 text-sm">{step.desc}</p>
+                  </div>
+                  {i < 3 && <div className="hidden md:block absolute top-16 -right-3 text-slate-500">→</div>}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">Key Features</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { icon: Lock, title: 'Secure Idea Protection', desc: 'Sensitive information remains private until you approve access' },
+              { icon: Target, title: 'Smart Discovery', desc: 'Connect with investors actively seeking your type of innovation' },
+              { icon: Users, title: 'Trust-Based Access', desc: 'You decide who can access detailed information' },
+              { icon: TrendingUp, title: 'Innovation Marketplace', desc: 'A growing ecosystem for entrepreneurs and capital' }
+            ].map((feature, i) => {
+              const Icon = feature.icon;
+              return (
+                <div key={i} className="flex gap-4">
+                  <Icon className="w-8 h-8 text-emerald-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold mb-2">{feature.title}</h4>
+                    <p className="text-slate-400">{feature.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* SIGNUP FORMS */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Founder Form */}
+            <div id="founder-form" className="bg-slate-700/50 border border-slate-600 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-2">Ready to showcase your idea?</h3>
+              <p className="text-slate-400 mb-6">Join founders building the future.</p>
+
+              <form onSubmit={(e) => handleSubmit(e, 'founder')} className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:outline-none focus:border-emerald-400 transition"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/50 transition"
+                >
+                  {submitted ? '✓ Welcome aboard!' : 'Submit Your Idea'}
+                </button>
+              </form>
+
+              <p className="text-xs text-slate-500 mt-4">
+                We'll send you next steps and resources to showcase your innovation.
+              </p>
+            </div>
+
+            {/* Investor Form */}
+            <div id="investor-form" className="bg-slate-700/50 border border-slate-600 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-2">Looking for emerging opportunities?</h3>
+              <p className="text-slate-400 mb-6">Get early access to curated deals.</p>
+
+              <form onSubmit={(e) => handleSubmit(e, 'investor')} className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:outline-none focus:border-blue-400 transition"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-500 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition"
+                >
+                  {submitted ? '✓ Welcome!' : 'Join as Investor'}
+                </button>
+              </form>
+
+              <p className="text-xs text-slate-500 mt-4">
+                We'll connect you with founders and upcoming investment opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16">Frequently Asked</h2>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: 'How is my idea protected?',
+                a: 'Your core idea details stay in a private vault. Only investors you approve can access them. We never share sensitive information without your permission.'
+              },
+              {
+                q: 'What if someone steals my idea?',
+                a: 'Ideas are harder to steal than execute. We keep detailed audit logs of who accessed what. You can revoke investor access anytime. Plus, your execution is what matters most.'
+              },
+              {
+                q: 'When does IdeaBridge launch?',
+                a: 'We\'re launching our beta now with founding members. Join the waitlist to get early access and shape the platform with us.'
+              },
+              {
+                q: 'Is there a cost?',
+                a: 'Posting ideas is free for founders. Browsing is free for investors. Premium features coming later.'
+              },
+              {
+                q: 'How do I know if an investor is serious?',
+                a: 'Look at their profile and portfolio. Message them before sharing sensitive info. You\'re in control of the pace.'
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-slate-700/30 border border-slate-600 rounded-lg p-6">
+                <h4 className="font-bold mb-3">{faq.q}</h4>
+                <p className="text-slate-400">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-slate-900 border-t border-slate-700 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-blue-500"></div>
+                <span className="font-bold">IdeaBridge</span>
+              </div>
+              <p className="text-sm text-slate-400">Trust. Innovation. Opportunity.</p>
+            </div>
+            <div>
+              <h5 className="font-bold mb-4">Product</h5>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-white transition">How It Works</a></li>
+                <li><a href="#" className="hover:text-white transition">Features</a></li>
+                <li><a href="#" className="hover:text-white transition">Pricing</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold mb-4">Resources</h5>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-white transition">Blog</a></li>
+                <li><a href="#" className="hover:text-white transition">Guides</a></li>
+                <li><a href="#" className="hover:text-white transition">FAQ</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-bold mb-4">Legal</h5>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-white transition">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-slate-400">
+            <p>&copy; 2026 IdeaBridge. All rights reserved.</p>
+            <div className="flex gap-6 mt-4 sm:mt-0">
+              <a href="#" className="hover:text-white transition">Twitter</a>
+              <a href="#" className="hover:text-white transition">LinkedIn</a>
+              <a href="#" className="hover:text-white transition">Email</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+6b844ec6693ccf320b50f1cf4db7bd6a27b03907/package-lock.json
