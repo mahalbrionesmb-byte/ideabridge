@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaBridge - Building Trust. Empowering Innovation.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            font-size: 0.9em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .features {
+            background: #f9f9f9;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #667eea;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .about p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #667eea;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #764ba2;
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .features h2,
+            .about h2 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌉 IdeaBridge</h1>
+        <p>Building Trust. Empowering Innovation.</p>
+        <p class="tagline">Securely share ideas, collaborate responsibly, connect with trusted partners.</p>
+        <a href="https://ideabridge-one.vercel.app" class="cta-button">Launch Demo →</a>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>Secure Idea Sharing</h3>
+                    <p>Share your innovative ideas with end-to-end encryption and complete control over who sees your concepts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✓</div>
+                    <h3>Identity Verification</h3>
+                    <p>All users are verified to ensure you're collaborating with legitimate innovators and investors.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🤝</div>
+                    <h3>Controlled Disclosure</h3>
+                    <p>Manage exactly what information is shared and with whom through granular permission controls.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📋</div>
+                    <h3>NDA Workflows</h3>
+                    <p>Automated, legally-sound NDA management for all your collaborative partnerships.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Collaboration Tracking</h3>
+                    <p>Real-time tracking of all interactions, edits, and engagements within your projects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💼</div>
+                    <h3>Investor Pitch Platform</h3>
+                    <p>Present your ideas to vetted investors with professional pitch tools and analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About IdeaBridge</h2>
+            <p>
+                IdeaBridge is a trust-first innovation platform designed to bridge the gap between innovators and opportunities. 
+                In a world where ideas are currency, we provide the security, transparency, and trust needed to collaborate fearlessly.
+            </p>
+            <p>
+                Whether you're an entrepreneur protecting your startup concept, a researcher collaborating globally, or an investor 
+                discovering breakthrough ideas, IdeaBridge ensures every interaction is secure, verified, and mutually beneficial.
+            </p>
+            <p>
+                <strong>Founded by:</strong> Ma. Lourdes Briones
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 IdeaBridge. All rights reserved.</p>
+        <p>Building Trust. Empowering Innovation.</p>
+        <div class="social-links">
+            <a href="https://github.com/mahalbrionesmb-byte/ideabridge" target="_blank">GitHub</a>
+            <a href="https://ideabridge-one.vercel.app" target="_blank">Demo</a>
+        </div>
+    </footer>
+</body>
+</html>
